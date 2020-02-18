@@ -71,6 +71,7 @@
     <Content Include="FlowerShop.aspx" />
     <Content Include="FlowerShops.css" />
     <Content Include="FlowerShopValidation.js" />
+    <Content Include="FlowerShops.html" />
     <Content Include="Images\question.png" />
     <Content Include="Payment.aspx" />
     <Content Include="question.png" />

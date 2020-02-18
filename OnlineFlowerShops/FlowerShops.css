@@ -113,8 +113,30 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
 }
-
-
+#Valid{
+    display:none;
+}
+#ValidSecurity{
+    display:none
+}
+#ValidExpiry {
+    display: none
+}
+#ValidName {
+    display: none
+}
+#ValidAddress {
+    display: none
+}
+#ValidTown {
+    display: none
+}
+#ValidPin {
+    display: none
+}
+#ValidMail {
+    display: none
+}
 input[type=text] {
     border-color: darkturquoise;
 }

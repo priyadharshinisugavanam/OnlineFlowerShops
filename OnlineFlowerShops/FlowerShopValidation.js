@@ -2,24 +2,33 @@
     var cardnum = document.getElementById("txtCardNumber").value;
     var regex = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
     var number = regex.test(cardnum);
-    if (!number) {
-        alert("Enter the valid  card number");
+    if (number) {
+        document.getElementById("Valid").style.display = "none";
+    }
+    else {
+        document.getElementById("Valid").style.display = "block"
     }
 }
 function ValidateSecurityCode() {
     var security = document.getElementById("txtSecurityCode").value;
     var regex = /^[0-9]{3}$/;
     var secureNumber = regex.test(security);
-    if (!secureNumber) {
-        alert("Enter the Valid security number")
+    if (secureNumber) {
+        document.getElementById("ValidSecurity").style.display = "none";
+    }
+    else {
+        document.getElementById("ValidSecurity").style.display = "block"
     }
 }
 function ValidateName() {
     var userName = document.getElementById("txtName").value;
     var regex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
     var name = regex.test(userName);
-    if (!name) {
-        alert("Enter the Valid name")
+    if (name) {
+        document.getElementById("ValidName").style.display = "none";
+    }
+    else {
+        document.getElementById("ValidName").style.display = "block"
     }
 }
 function ValidateAddress1() {
@@ -27,8 +36,11 @@ function ValidateAddress1() {
     var address = document.getElementById("txtAddress1").value;
     var regex = /^[a-zA-Z0-9]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
     var validAddress = regex.test(address);
-    if (!validAddress) {
-        alert("Enter the Valid Address1")
+    if (validAddress) {
+        document.getElementById("ValidAddress").style.display = "none";
+    }
+    else {
+        document.getElementById("ValidAddress").style.display = "block"
     }
 }
 
@@ -55,8 +67,11 @@ function ValidateCity() {
     var city = document.getElementById("txtCity").value;
     var regex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
     var validCity = regex.test(city);
-    if (!validCity) {
-        alert("Enter the Valid Town/City")
+    if (validCity) {
+        document.getElementById("ValidTown").style.display = "none";
+    }
+    else {
+        document.getElementById("ValidTown").style.display = "block"
     }
 }
 
@@ -74,8 +89,11 @@ function ValidatePin() {
     var pin = document.getElementById("txtPostcode").value;
     var regex = /^[0-9]{6}(?:-[0-9]{4})?$/;
     var validPin = regex.test(pin);
-    if (!validPin) {
-        alert("Enter the Valid Pincode")
+    if (validPin) {
+        document.getElementById("ValidPin").style.display = "none";
+    }
+    else {
+        document.getElementById("ValidPin").style.display = "block"
     }
 }
 
@@ -93,28 +111,23 @@ function ValidateMail() {
     var mail = document.getElementById("txtEmail").value;
     var regex = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
     var validMail = regex.test(mail);
-    if (!validMail) {
-        alert("Enter the Valid Mail id")
+    if (validMail) {
+        document.getElementById("ValidMail").style.display = "none"
+    }
+    else {
+        document.getElementById("ValidMail").style.display = "block"
     }
 }
 
 function Submit() {
-    var cardNumber = document.getElementById("txtCardNumber").value.length;
-    var mail = document.getElementById("txtEmail").value.length;
-    var securityCode = document.getElementById("txtSecurityCode").value.length;
-    var name = document.getElementById("txtName").value.length;
-    var address = document.getElementById("txtAddress1").value.length;
-    var town = document.getElementById("txtCity").value.length;
-    var pin = document.getElementById("txtPostcode").value.length;
+    ValidateCardNumber();
+    ValidateName();
+    ValidateSecurityCode();
+    ValidatePin();
+    ValidateMail();
+    ValidateAddress1();
+    ValidateCity();
     
-
-    if (cardNumber > 0 && mail > 0 && securityCode > 0 && name > 0 && address >0 && town >0 && pin >0) {
-        alert("successfull")
-    }
-    else {
-       
-        alert("Enter the Required fields")
-    }
 }
 
 
